@@ -1,0 +1,132 @@
+% Les packages
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{csquotes}
+
+\usepackage{ amssymb }
+\usepackage{etoolbox}
+\fancyhf{} % Clear header/footer
+\makeatletter
+%\patchcmd{\f@nch@head}{\rlap}{\color{red}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{}
+%\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
+
+\makeatother
+\fancyfoot[R]{\thepage}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{makeidx}
+\usepackage{varioref}
+\usepackage{titlesec}
+\usepackage[style=authoryear]{biblatex}
+\setlength{\columnsep}{0.75cm}
+\usepackage{pifont}
+\usepackage{eurosym}
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{color}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{colortbl}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{picinpar}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{afterpage}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage[font=small]{caption}
+\usepackage{subcaption}
+\usepackage{microtype}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{ntheorem}
+\usepackage{subscript}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{xspace}
+\usepackage{adjustbox}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,    % \ref, \autoref, etc. in black
+    citecolor=black,    % \cite in black
+    urlcolor=blue       % only URLs in blue
+]{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Les commandes
+
+\newcommand{\SUM}{\sum\limits}
+\newcommand{\D}{\displaystyle}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Les environnements
+\usepackage{tikz}
+\usetikzlibrary{shapes,shadows}
+\tikzstyle{abstractbox} = [draw=black, fill=white, rectangle, inner sep=10pt, style=rounded corners]
+\tikzstyle{abstracttitle} =[fill=white]
+
+\definecolor{abstract-back}{RGB}{214, 234, 248}
+\definecolor{abstract-frame}{RGB}{36, 113, 163}
+\usepackage[skins]{tcolorbox}
+
+\tcbset{
+    abstractbox/.style={
+        enhanced,
+        colback=blue!5!white,
+        colframe=blue!75!black,
+        fonttitle=\Large\bfseries,
+        drop shadow={shadow scale=0.9, shadow xshift=1mm, shadow yshift=-1mm}
+    }
+}
+
+\newtcolorbox{abstractbox}{abstractbox,
+    colback=abstract-back, % Background color
+    colframe=abstract-frame, % Border color
+    fonttitle=\Large\bfseries, % Bold font for the title
+    title=Résumé, % Title texts
+    boxrule=1mm}% Border width
+
+
+\makeatletter
+\@ifpackageloaded{babel}{%
+  \@ifundefined{NoAutoSpaceBeforeFDP}{%
+    \newcommand{\nospace}[1]{#1}%
+  }{%
+    \newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}%
+  }%
+}{%
+  \newcommand{\nospace}[1]{#1}%
+}
+\makeatother
